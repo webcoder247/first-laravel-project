@@ -14,19 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Welcome Page
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 })->name('home');
-
-// About US page
-Route::get('/about-page', function () {
+Route::get('/about-us', function() {
     return view('about');
 })->name('about');
-
-Route::get('/contact-page', function () {
+Route::get('/contact-us', function () {
     return view('contact');
-})->name('contract');
+})->name('contact');
 
 Route::get('/service-page', function () {
     return view('service');
 })->name('service');
+
+// Route::get('/service/{service_id}/{service_name?}', function ($service_id,$service_name=null) {
+//     return $service_id." ".$service_name;
+// })->name('service');
+
+// Route::get('users/{id}/{name}', function ($id,$name) {
+//     echo $id, $name;
+// })->where(['id' => '[0-9]+','name => [A-Zz-a]+']);
+
+// Route::get('category/{category_name}', function ($category_name) {
+//     echo $category_name;
+// })->whereIn('category_name',['shirt','pen','movie']);
+// Route::get('/search/{keyword}', function ($keyword) {
+//     echo $keyword;
+// })->where('$search','.*');
